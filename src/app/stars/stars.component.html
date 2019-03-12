@@ -1,0 +1,11 @@
+<p>
+  <!--1.stars: use Bootstrap "glyphicon glyphicon-star"-->
+  <!--2.空心stars: use Bootstrap "glyphicon glyphicon-star glyphicon-star-empty"-->
+  <!--3.在star.ts: star:boolean, 在star.html: ngFor loop stars-->
+  <!--4.有实有虚：use attri bind 中的样式binding[class.]意思是：span是否出现glyphicon-star-empty这个css样式由star决定的，if star=true，就出现空心星星-->
+  <!--5.传递rate评价(3.5)到下面<span>：用@input bind。{{rating}}是差值表达式-->
+  <!--6.判断rate评价(3.5)对应的星星是空或实：-->
+  <span *ngFor="let star of stars" class="glyphicon glyphicon-star"
+  [class.glyphicon-star-empty]="star"></span>
+  <span>{{rating}}star</span>
+</p>

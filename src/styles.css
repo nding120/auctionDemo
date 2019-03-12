@@ -1,0 +1,5 @@
+/* You can add global styles 全局样式 to this file, and also import other style files */
+body {
+    padding-top: 70px;
+}
+/* to avoid be blocked by thick navbar */

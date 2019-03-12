@@ -1,0 +1,29 @@
+<!-- *ngFor="let productdiy of products":把ngoninit()里的this.products内容都轮动进来,循环一个数组，反复生成html n次。
+col-md-4 col-sm-4 col-lg-4 -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <input class="form-control" placeholder="please input item name"
+      [formControl]="titleFilter">
+      <!--this"form-control"is Bootstrap style, 查一下form-group-->
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let productdiy of products" class="col-md-4 col-sm-4 col-lg-4">
+  <div class="thumbnail">
+    <!--attri binding:[src]-->
+    <img [src]="imgUrl">
+    <div class="caption">
+      <h4 class="pull-right">$ {{productdiy.price}}</h4>
+      <h4><a [routerLink]="['/product',productdiy.title]">{{productdiy.title}}</a></h4>
+      <!--add routerLink -->
+      <p>{{productdiy.desc}}</p>
+    </div>
+    <div>
+      <app-stars [rating]="productdiy.rating"></app-stars>
+      <!--属性绑定：[rating]是stars里的属性，值来自product.rating，就实现了从product(父),传给stars(子)-->
+    </div>
+  </div> 
+</div>

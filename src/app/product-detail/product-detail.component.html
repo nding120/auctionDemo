@@ -1,0 +1,28 @@
+<div class="thumbnail">
+  <img src="http://palcehold.it/820*320">
+  <div>
+    <h4 class="pull-right">$ {{product.price}}</h4>
+    <h4>{{produc.title}}</h4>
+    <p>{{product.desc}}</p>
+  </div>
+  <div>
+    <p class="pull-right">{{comments.length}}</p>
+    <p>
+      <app-stars [rating]="product.rating"></app-stars>
+    </p>
+  </div>
+</div>
+<div class="well">
+  <div class="row" *ngFor="let comment of comments">
+    <!--把所有的评论遍历traverse-->
+    <hr>
+    <div class="col-md-12">
+      <app-stars [rating]="comment.rating"></app-stars>
+      <span>{{comment.user}}</span>
+      <span class="pull-right">{{comment.timestamp}}</span>
+      <p>{{comment.content}}</p>
+    </div>
+    <!--这个div为了包裹“星级评价”-->
+
+  </div>
+</div>
